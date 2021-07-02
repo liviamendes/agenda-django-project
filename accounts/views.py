@@ -89,6 +89,13 @@ def dashboard(request):
         form = FormContact(request.POST)
         return render(request, 'accounts/dashboard.html', {'form': form})
 
+    email = request.POST.get('email')
+    try:
+        validate_email(email)
+    except:
+        messages.error(request, 'INVALID EMAIL')
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
     form.save()
     messages.success(request, 'USER SUCCESSFULLY REGISTERED!')
     return redirect('dashboard')

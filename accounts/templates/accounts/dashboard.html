@@ -6,7 +6,7 @@
 <h1 class="mt-3 mb-3">Hello, {{ user.first_name }} {{ user.last_name }}</h1>
   {% include 'parciais/_messages.html' %}
 <p>
-    Your username is: {{ user }}.
+    Your username is: {{ user }}, if you wish logout <a class="link" href="{% url 'logout'%}">click here</a>.
 </p>
 
 <div class="container">
