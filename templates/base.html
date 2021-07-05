@@ -21,14 +21,15 @@
             <br><br>
             <form method="get" action="{% url 'search' %}">
                 <div class="form-group row">
-                    <div class="col-12">
+                    <div class="col-10">
                         <input class="form-control"
                                type="search" value="{{ request.GET.search }}"
                                id="search-input"
                                placeholder="Type your search"
                                name="search">
-                        {% include 'parciais/_messages.html'%}
                     </div>
+                    <button class="btn btn btn-default bg-dark text-light">Search</button>
+                    {% include 'parciais/_messages.html'%}
                 </div>
             </form>
             {% endif %}
@@ -39,9 +40,7 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+{% include 'parciais/_footer.html'%}
 
 </body>
 
