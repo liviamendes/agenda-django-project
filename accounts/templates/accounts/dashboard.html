@@ -8,6 +8,7 @@
 <p>
     Your username is: {{ user }}, if you wish logout <a class="link" href="{% url 'logout'%}">click here</a>.
 </p>
+<p>Here you can add new contacts: </p>
 
 <div class="container">
     <form action="{% url 'dashboard'%}" method="POST" enctype="multipart/form-data">
@@ -16,7 +17,7 @@
             {{ form }}
             <tr>
                 <td colspan="2">
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="bg-dark btn btn-primary">Send</button>
                 </td>
             </tr>
         </table>

@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages, auth
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import FormContact
+from contacts.models import Contact
 
 
 def login(request):
@@ -75,6 +76,31 @@ def register(request):
                                     last_name=last_name)
     user.save()
     return redirect('login')
+
+
+@login_required(redirect_field_name='login')
+def update_view(request, contact_id):
+    context = {}
+    obj = get_object_or_404(Contact, id=contact_id)
+    form = FormContact(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
+    context["form"] = form
+    return render(request, "accounts/update_view.html", context)
+
+
+@login_required(redirect_field_name='login')
+def delete(request, contact_id):
+    context = {}
+    obj = get_object_or_404(Contact, id=contact_id)
+
+    if request.method == "POST":
+        obj.delete()
+        return redirect('index')
+
+    return render(request, "accounts/delete.html", context)
 
 
 @login_required(redirect_field_name='login')

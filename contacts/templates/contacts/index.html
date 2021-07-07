@@ -11,6 +11,8 @@
         <th>Last Name</th>
         <th>Phone</th>
         <th>Categoria</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +25,12 @@
         <td>{{ contact.last_name }}</td>
         <td>{{ contact.phone }}</td>
         <td>{{ contact.categoria }}</td>
+        <td>
+            <a id="update-link" href="{% url 'update' contact.id %}">&#8634;</a>
+        </td>
+        <td>
+            <a class="delete-link" href="{% url 'delete' contact.id %}">&#215;</a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
