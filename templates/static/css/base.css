@@ -13,3 +13,8 @@
     font-size: 22px;
     text-shadow: 1px 1px #3B8147;
 }
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}

@@ -22,7 +22,7 @@ def login(request):
     else:
         auth.login(request, user)
         messages.success(request, 'User logged in successfully.')
-        return redirect('dashboard')
+        return redirect('index')
 
 
 def logout(request):
