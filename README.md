@@ -4,6 +4,7 @@ AGENDA DJANGO PROJECT
 </h1>
 
 <p align="center">The agenda project is a web platform where you can collaborate with an online agenda, it is possible for a user to register/login and it also has the functionality to view, create, delete and update contacts.</p>
+<p align="center"> You can see the project: <a href="https://agendadjango-liviaproject.herokuapp.com/"> Click Here </a></p> 
 
 <p align="center">
   <a href="https://github.com/liviamendes/agenda-django-project/blob/main/LICENSE">
